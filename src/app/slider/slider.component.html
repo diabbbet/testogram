@@ -1,0 +1,38 @@
+<div class="slider">
+  <div class="slider__content">
+    <div class="slider__title">testogram</div>
+
+    <div class="slider__items"
+      [style.transform]="'translateX('+ -((16 + (size*1)) * activeIndex) +'px)'"
+    >
+      <app-slider-item class="slider__item"
+        *ngFor="let item of backgrounds; index as i;"
+        [background]="item"
+        [size]="size"
+        [cornerRadius]="cornerRadius"
+        [cornerRadiusType]="cornerRadiusType"
+        [class.active]="i === activeIndex"
+      ></app-slider-item>
+    </div>
+  </div>
+
+  <div class="slider__controlls">
+    <div class="slider__controlls-item"
+      *ngFor="let item of controllsConfig"
+      [class.half]="item.half"
+    >
+      <app-button
+        *ngIf="item.type === 'button'"
+        [text]="item.name"
+        (clickBtn)="actioncontroll($event)"
+      ></app-button>
+
+      <app-input
+        *ngIf="item.type === 'input'"
+        [select]="item.select"
+        [placeholder]="item.name"
+        (changeInput)="actioncontroll($event)"
+      ></app-input>
+    </div>
+  </div>
+</div>

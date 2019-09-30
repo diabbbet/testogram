@@ -1,0 +1,19 @@
+<div class="input"
+  [class.with-select]="select"
+>
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    (keydown)="inputKeydown($event)"
+    (input)="inputChange($event)"
+  >
+
+  <select
+    *ngIf="select"
+    (change)="selectChange($event)"
+  >
+    <option value="px">px</option>
+    <option value="%">%</option>
+  </select>
+</div>
+

@@ -1,0 +1,38 @@
+.input {
+  display: flex;
+
+  input {
+    flex: 1;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0,0,0, 0.3);
+    padding: 12px;
+    border: none;
+  }
+
+  &.with-select {
+    input {
+      border-radius: 12px 0 0 12px;
+    }
+  }
+
+  select {
+    font-size: 20px;
+    line-height: 24px;
+    color: #757575;
+    font-weight: 700;
+    padding: 12px;
+    width: 48px;
+    border: none;
+    border-left: 1px solid #757575;
+    border-radius: 0 12px 12px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+  }
+}
